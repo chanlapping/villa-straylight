@@ -1,0 +1,14 @@
+---
+layout: base.html
+---
+
+<p>
+  <strong>Posted: </strong> {{ page.date | postDate }}
+  <br />
+  <strong>Tags: </strong>
+  {% for tag in tags | exclude("post") %}
+  <a href="/tags/{{ tag | slugify }}">{{ tag }}</a> {% if not loop.last %}, {%
+  endif %} {% endfor %}
+</p>
+
+{{content | safe }}

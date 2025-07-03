@@ -1,0 +1,28 @@
+---
+pagination:
+  data: collections.post
+  size: 10
+  alias: posts
+  reverse: true
+title: "Post Archive"
+layout: base.html
+---
+
+
+{%- for post in posts -%}
+<p>
+  <a href="{{ post.url }}">{{ post.data.title }}</a> - {{post.date | postDate}}
+</p>
+{%- endfor -%} 
+
+{% if pagination.href.previous %}
+<a href="{{ pagination.href.previous }}">Previous</a>
+{% else %}
+Previous
+{% endif %}
+/
+{% if pagination.href.next %}
+<a href="{{ pagination.href.next }}">Next</a>
+{% else %}
+Next
+{% endif %}

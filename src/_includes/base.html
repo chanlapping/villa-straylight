@@ -1,0 +1,27 @@
+---
+title: "Base Template"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/tiny-brutalism.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="row">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/archive">Archive</a>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>{{title}}</h1>
+      {{content | safe }}
+    </main>
+  </body>
+</html>
