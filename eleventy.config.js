@@ -1,6 +1,10 @@
 const { DateTime } = require("luxon");
 
 module.exports = async function (eleventyConfig) {
+  const { HtmlBasePlugin } = await import("@11ty/eleventy");
+
+  eleventyConfig.addPlugin(HtmlBasePlugin);
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addWatchTarget("src/css");
 
@@ -27,4 +31,5 @@ module.exports.config = {
   },
   htmlTemplateEngine: "njk",
   markdownTemplateEngine: "njk",
+  pathPrefix: "/villa-straylight/",
 };
